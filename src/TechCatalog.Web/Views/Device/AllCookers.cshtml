@@ -1,0 +1,104 @@
+﻿@model IEnumerable<DeviceListingViewModel>
+
+@{
+    ViewData["Title"] = "Cookers";
+}
+
+<h1 class=" text-center display-4">Cookers</h1>
+<br />
+<form class="" asp-action="AllCookers" asp-controller="Device">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="Brand" id="option2" autocomplete="off">
+                        <i class="fas fa-sort-alpha-up"></i> A-Z
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="BrandByDescending" id="option2" autocomplete="off">
+                        <i class="fas fa-sort-alpha-down-alt"></i> Z-A
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="Price" id="option3" autocomplete="off"> Price <i class="fas fa-arrow-up"></i>
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="PriceByDescending" id="option3" autocomplete="off"> Price <i class="fas fa-arrow-down"></i>
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="default" id="option3" autocomplete="off"> Default
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-outline-info"><i class="fas fa-sort"></i> Sort Cookers</button>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="https://encycolorpedia.com/companies/germany/aeg.svg" width="150" />
+                <br />
+            </div>
+            <div class="col text-center">
+                <img src="https://cdn.worldvectorlogo.com/logos/beko-1.svg" width="150" />
+                <br />
+            </div>
+            <div class="col text-center">
+                <img src="https://cdn.worldvectorlogo.com/logos/bosch.svg" width="150" />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class="row">
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Aeg" />
+            </div>
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Beko" />
+            </div>
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Bosch" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-outline-info"><i class="fas fa-filter"></i> Filter Cookers</button>
+            </div>
+        </div>
+    </div>
+</form>
+<hr />
+<div class="row mx-auto container" align="center">
+
+    @foreach (var coocker in Model)
+    {
+        <div class="card border-bottom box-shadow mb-4 col-md-4" style="width: 18rem;">
+            <div class="container" id="imgContainer">
+                <img class="card-img-top col-md-10" id="image" src="@coocker.Image">
+                <div class="overlay bg-dark card">
+                    <div class="text">
+                        Warranty @coocker.Warranty months
+                        <br />
+                        <br />
+                        <a class="btn btn-outline-info" asp-action="CookerDetails" asp-controller="Device" asp-route-id="@coocker.Id"><i class="fas fa-info-circle"></i>  View More</a>
+                    </div>
+                </div>
+            </div>
+            <h4>@coocker.Brand @coocker.DeviceModel</h4>
+            <p><i class="fas fa-dollar-sign btn-outline-info"></i> @coocker.Price</p>
+        </div>
+    }
+</div>
+

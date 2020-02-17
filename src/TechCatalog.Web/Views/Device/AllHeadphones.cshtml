@@ -1,0 +1,114 @@
+﻿@model IEnumerable<DeviceListingViewModel>
+
+@{
+    ViewData["Title"] = "Headphones";
+}
+
+<h1 class=" text-center display-4">Headphones</h1>
+<br />
+<form class="" asp-action="AllHeadphones" asp-controller="Device">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="Brand" id="option2" autocomplete="off">
+                        <i class="fas fa-sort-alpha-up"></i> A-Z
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="BrandByDescending" id="option2" autocomplete="off">
+                        <i class="fas fa-sort-alpha-down-alt"></i> Z-A
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="Price" id="option3" autocomplete="off"> Price <i class="fas fa-arrow-up"></i>
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="PriceByDescending" id="option3" autocomplete="off"> Price <i class="fas fa-arrow-down"></i>
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="default" id="option3" autocomplete="off"> Default
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-outline-info"><i class="fas fa-sort"></i> Sort Headphones</button>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="https://logodownload.org/wp-content/uploads/2017/10/hyper-x-logo.png" width="150" />
+                <br />
+            </div>
+            <div class="col text-center">
+                <img src="https://cdn.worldvectorlogo.com/logos/logitech-2.svg" width="150" />
+                <br />
+            </div>
+            <div class="col text-center">
+                <img src="https://gamesync.us/wp-content/uploads/2013/05/steelseries-logo.png" width="150" />
+                <br />
+            </div>
+            <div class="col text-center" style="">
+                <img src="https://logos-download.com/wp-content/uploads/2019/01/Razer_Logo_text_green.png" width="100" />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class="row">
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Hyper X" />
+            </div>
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Logitech" />
+            </div>
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Steelseries" />
+            </div>
+            <div class="col text-center" style="">
+
+                <input type="checkbox" name="sortType" value="Razer" />
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-outline-info"><i class="fas fa-filter"></i> Filter Headphones</button>
+            </div>
+        </div>
+    </div>
+</form>
+<hr />
+<div class="row mx-auto container" align="center">
+
+    @foreach (var headphone in Model)
+    {
+        <div class="card border-bottom box-shadow mb-4 col-md-4" style="width: 18rem;">
+            <div class="container" id="imgContainer">
+                <img class="card-img-top col-md-10" id="image" src="@headphone.Image">
+                <div class="overlay bg-dark card">
+                    <div class="text">
+                        Warranty @headphone.Warranty months
+                        <br />
+                        <br />
+                        <a class="btn btn-outline-info" asp-action="HeadphoneDetails" asp-controller="Device" asp-route-id="@headphone.Id"><i class="fas fa-info-circle"></i>  View More</a>
+                    </div>
+                </div>
+            </div>
+            <h4>@headphone.Brand @headphone.DeviceModel</h4>
+            <p><i class="fas fa-dollar-sign btn-outline-info"></i> @headphone.Price</p>
+        </div>
+    }
+</div>
+
+

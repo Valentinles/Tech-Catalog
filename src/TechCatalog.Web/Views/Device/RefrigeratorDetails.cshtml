@@ -1,0 +1,62 @@
+﻿@model RefrigeratorDetailViewModel
+
+@{
+    ViewData["Title"] = "Refrigerator";
+}
+
+<img src="@Model.Image" width="200" class="mx-auto d-block" />
+<h1 class="text-center display-4">@Model.Brand @Model.DeviceModel</h1>
+<br />
+<table class="table table-hover container">
+    <tbody>
+        <tr>
+            <td>Weight</td>
+            <td>@Model.Weight kg</td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>@Model.Color</td>
+        </tr>
+        <tr>
+            <td>Warranty</td>
+            <td>@Model.Warranty months</td>
+        </tr>
+        <tr>
+            <td>Energy Class</td>
+            <td>@Model.EnergyClass</td>
+        </tr>
+        <tr>
+            <td>Height</td>
+            <td>@Model.Height sm</td>
+        </tr>
+        <tr>
+            <td>Width</td>
+            <td>@Model.Width sm</td>
+        </tr>
+        <tr>
+            <td>Depth</td>
+            <td>@Model.Depth sm</td>
+        </tr>
+        <tr>
+            <td>Total Capacity</td>
+            <td>@Model.TotalCapacity L</td>
+        </tr>
+        <tr>
+            <td>Capacity Refrigerator</td>
+            <td>@Model.CapacityRefrigerator L</td>
+        </tr>
+        <tr>
+            <td>Capacity Freezer</td>
+            <td>@Model.CapacityFreezer L</td>
+        </tr>
+        <tr>
+            <td>Number Of Shelves</td>
+            <td>@Model.NumberOfShelves</td>
+        </tr>
+        <tr>
+            <td>Noise Level</td>
+            <td>@Model.NoiseLevel dB</td>
+        </tr>
+    </tbody>
+</table>
+

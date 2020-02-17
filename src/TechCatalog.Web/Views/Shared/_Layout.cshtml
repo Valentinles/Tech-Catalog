@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Tech Catalog</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/ImageFadeOverlay.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/f924ffe81b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home">Tech Catalog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-action="Index" asp-controller="Home"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            PC Peripherials
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-action="AllDesktopPcs" asp-controller="Device">Desktop Pcs</a>
+                            <a class="dropdown-item" asp-action="AllLaptops" asp-controller="Device">Laptops</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            TV and Gaming
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-action="AllTvs" asp-controller="Device">TVs</a>
+                            <a class="dropdown-item" asp-action="AllGameConsoles" asp-controller="Device">Game Consoles</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            IT Accessories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-action="AllHeadphones" asp-controller="Device">Headphones</a>
+                            <a class="dropdown-item" asp-action="AllKeyboards" asp-controller="Device">Keyboards</a>
+                            <a class="dropdown-item" asp-action="AllMonitors" asp-controller="Device">Monitors</a>
+                            <a class="dropdown-item" asp-action="AllMice" asp-controller="Device">Mice</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Phones and Tablets
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-action="AllMobilePhones" asp-controller="Device">Mobile Phones</a>
+                            <a class="dropdown-item" asp-action="AllTablets" asp-controller="Device">Tablets</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Home Appliances
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-action="AllAirConditioners" asp-controller="Device">Air Conditioners</a>
+                            <a class="dropdown-item" asp-action="AllCookers" asp-controller="Device">Cookers</a>
+                            <a class="dropdown-item" asp-action="AllRefrigerators" asp-controller="Device">Refrigerators</a>
+                            <a class="dropdown-item" asp-action="AllWashingMachines" asp-controller="Device">Washing Machines</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pb-3" id="main">
+        <br />
+        @RenderBody()
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="">
+                    Tech Catalog
+                </div>
+                <div class="col text-xl-right">
+                    <a href="https://github.com/valentinles"><i class="fab fa-github"></i>Valentinles</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

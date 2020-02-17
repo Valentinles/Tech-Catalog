@@ -1,0 +1,67 @@
+﻿@model GameConsoleDetailViewModel
+
+@{
+    ViewData["Title"] = "Game Console";
+}
+
+<img src="@Model.Image" width="200" class="mx-auto d-block" />
+<h1 class="text-center display-4">@Model.Brand @Model.DeviceModel</h1>
+<br />
+<table class="table table-hover container">
+    <tbody>
+        <tr>
+            <td>Weight</td>
+            <td>@Model.Weight kg</td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>@Model.Color</td>
+        </tr>
+        <tr>
+            <td>Warranty</td>
+            <td>@Model.Warranty months</td>
+        </tr>
+        <tr>
+            <td>HDD</td>
+            <td>@Model.Hdd GB</td>
+        </tr>
+        <tr>
+            <td>Processor</td>
+            <td>@Model.Processor</td>
+        </tr>
+        <tr>
+            <td>Video Card</td>
+            <td>@Model.VideoCard</td>
+        </tr>
+        <tr>
+            <td>RAM</td>
+            <td>@Model.Ram.GetDisplayName()</td>
+        </tr>
+        <tr>
+            <td>BlueTooth</td>
+            @if (Model.IsBluetooth == true)
+            {
+                <td><i class="fas fa-check-circle btn-outline-success"></i></td>
+            }
+            else
+            {
+                <td><i class="fas fa-times btn-outline-danger"></i></td>
+            }
+        </tr>
+        <tr>
+            <td>HDMI</td>
+            @if (Model.IsHdmi == true)
+            {
+                <td><i class="fas fa-check-circle btn-outline-success"></i></td>
+            }
+            else
+            {
+                <td><i class="fas fa-times btn-outline-danger"></i></td>
+            }
+        </tr>
+        <tr>
+            <td>Dimension</td>
+            <td>@Model.Dimension</td>
+        </tr>
+    </tbody>
+</table>

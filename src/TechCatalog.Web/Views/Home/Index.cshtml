@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tech Catalog</h1>
+    <p>Choose among the most popular brands and latest models.</p>
+</div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:1000px; margin:0 auto;">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a asp-action="AllLaptops" asp-controller="Device">
+                <img class="d-block w-100" src="https://picjumbo.com/wp-content/uploads/modern-laptop-colorful-abstract-2210x1473.jpg" alt="First slide" style="max-height:400px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Laptops</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a asp-action="AllKeyboards" asp-controller="Device">
+                <img class="d-block w-100" src="https://rog.asus.com/media/15220831409.jpg" alt="Second slide" style="max-height:400px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Keyboards</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a asp-action="AllGameConsoles" asp-controller="Device">
+                <img class="d-block w-100" src="https://i.pinimg.com/originals/df/b1/9b/dfb19bf09c32121bbc167fc7a17c3efb.jpg" alt="Third slide" style="max-height:400px;">
+            </a>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Game Consoles</h5>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

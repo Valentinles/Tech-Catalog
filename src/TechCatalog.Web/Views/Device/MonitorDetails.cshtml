@@ -1,0 +1,50 @@
+﻿@model MonitorDetailViewModel
+
+@{
+    ViewData["Title"] = "Monitor";
+}
+
+<img src="@Model.Image" width="200" class="mx-auto d-block" />
+<h1 class="text-center display-4">@Model.Brand @Model.DeviceModel</h1>
+<br />
+<table class="table table-hover container">
+    <tbody>
+        <tr>
+            <td>Weight</td>
+            <td>@Model.Weight kg</td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>@Model.Color</td>
+        </tr>
+        <tr>
+            <td>Warranty</td>
+            <td>@Model.Warranty months</td>
+        </tr>
+        <tr>
+            <td>Contrast</td>
+            <td>@Model.Contrast</td>
+        </tr>
+        <tr>
+            <td>Display Type</td>
+            <td>@Model.DisplayType</td>
+        </tr>
+        <tr>
+            <td>Display Size</td>
+            <td>@Model.DisplaySizeInch inches</td>
+        </tr>
+        <tr>
+            <td>Refresh Rate</td>
+            <td>@Model.RefreshRate.GetDisplayName()</td>
+        </tr>
+        <tr>
+            <td>Resolution</td>
+            <td>@Model.Resolution.GetDisplayName()</td>
+        </tr>
+        <tr>
+            <td>Dimension</td>
+            <td>@Model.Dimension mm</td>
+        </tr> 
+    </tbody>
+</table>
+

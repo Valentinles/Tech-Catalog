@@ -1,0 +1,81 @@
+﻿@model TabletDetailViewModel
+
+@{
+    ViewData["Title"] = "Tablets";
+}
+
+<img src="@Model.Image" width="200" class="mx-auto d-block" />
+<h1 class="text-center display-4">@Model.Brand @Model.DeviceModel</h1>
+<br />
+<table class="table table-hover container">
+    <tbody>
+        <tr>
+            <td>Weight</td>
+            <td>@Model.Weight kg</td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>@Model.Color</td>
+        </tr>
+        <tr>
+            <td>Warranty</td>
+            <td>@Model.Warranty months</td>
+        </tr>
+        <tr>
+            <td>Processor</td>
+            <td>@Model.Processor</td>
+        </tr>
+        <tr>
+            <td>Display Type</td>
+            <td>@Model.DisplayType</td>
+        </tr>
+        <tr>
+            <td>Display Size</td>
+            <td>@Model.DisplaySizeInch inches</td>
+        </tr>
+        <tr>
+            <td>Resolution</td>
+            <td>@Model.Resolution.GetDisplayName()</td>
+        </tr>
+        <tr>
+            <td>Memory</td>
+            <td>@Model.Memory GB</td>
+        </tr>
+        <tr>
+            <td>RAM</td>
+            <td>@Model.Ram.GetDisplayName()</td>
+        </tr>
+        <tr>
+            <td>Rear Camera Resolution</td>
+            <td>@Model.RearCameraResolution MP</td>
+        </tr>
+        <tr>
+            <td>Front Camera Resolution</td>
+            <td>@Model.FrontCameraResolution MP</td>
+        </tr>
+        <tr>
+            <td>Bluetooth</td>
+            @if (Model.IsBluetooth == true)
+            {
+                <td><i class="fas fa-check-circle btn-outline-success"></i></td>
+            }
+            else
+            {
+                <td><i class="fas fa-times btn-outline-danger"></i></td>
+            }
+        </tr>
+        <tr>
+            <td>Memory</td>
+            <td>@Model.Memory GB</td>
+        </tr>
+        <tr>
+            <td>Battery</td>
+            <td>@Model.Battery</td>
+        </tr>
+        <tr>
+            <td>Operating System</td>
+            <td>@Model.MobileOs</td>
+        </tr>
+    </tbody>
+</table>
+

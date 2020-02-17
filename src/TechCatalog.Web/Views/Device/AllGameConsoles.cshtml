@@ -1,0 +1,96 @@
+﻿@model IEnumerable<DeviceListingViewModel>
+
+@{
+    ViewData["Title"] = "Game Consoles";
+}
+
+<h1 class=" text-center display-4">Game Consoles</h1>
+<br />
+<form class="" asp-action="AllGameConsoles" asp-controller="Device">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="Brand" id="option2" autocomplete="off">
+                        <i class="fas fa-sort-alpha-up"></i> A-Z
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="BrandByDescending" id="option2" autocomplete="off">
+                        <i class="fas fa-sort-alpha-down-alt"></i> Z-A
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="Price" id="option3" autocomplete="off"> Price <i class="fas fa-arrow-up"></i>
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="PriceByDescending" id="option3" autocomplete="off"> Price <i class="fas fa-arrow-down"></i>
+                    </label>
+                    <label class="btn btn-outline-info">
+                        <input type="radio" name="sortType" value="default" id="option3" autocomplete="off"> Default
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-outline-info"><i class="fas fa-sort"></i> Sort GameConsoles</button>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="https://static.wixstatic.com/media/d2739f_41a1861d5e694ec4b7c186f71ef8c8a9~mv2_d_7000_1500_s_2.png" width="150" />
+                <br />
+            </div>
+            <div class="col text-center">
+                <img src="https://cdn.worldvectorlogo.com/logos/xbox-9.svg" width="150" />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class=" container">
+        <div class="row">
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Playstation" />
+            </div>
+            <div class="col text-center">
+                <input type="checkbox" name="sortType" value="Xbox" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-outline-info"><i class="fas fa-filter"></i> Filter Game Consoles</button>
+            </div>
+        </div>
+    </div>
+</form>
+<hr />
+<div class="row mx-auto container" align="center">
+
+    @foreach (var gc in Model)
+    {
+        <div class="card border-bottom box-shadow mb-4 col-md-4" style="width: 18rem;">
+            <div class="container" id="imgContainer">
+                <img class="card-img-top col-md-10" id="image" src="@gc.Image">
+                <div class="overlay bg-dark card">
+                    <div class="text">
+                        Warranty @gc.Warranty months
+                        <br />
+                        <br />
+                        <a class="btn btn-outline-info" asp-action="GameConsoleDetails" asp-controller="Device" asp-route-id="@gc.Id"><i class="fas fa-info-circle"></i>  View More</a>
+                    </div>
+                </div>
+            </div>
+            <h4>@gc.Brand @gc.DeviceModel</h4>
+            <p><i class="fas fa-dollar-sign btn-outline-info"></i> @gc.Price</p>
+        </div>
+    }
+</div>

@@ -1,0 +1,91 @@
+﻿@model WashingMachineDetailViewModel
+
+@{
+    ViewData["Title"] = "WashingMachine";
+}
+
+<img src="@Model.Image" width="200" class="mx-auto d-block" />
+<h1 class="text-center display-4">@Model.Brand @Model.DeviceModel</h1>
+<br />
+<table class="table table-hover container">
+    <tbody>
+        <tr>
+            <td>Weight</td>
+            <td>@Model.Weight kg</td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>@Model.Color</td>
+        </tr>
+        <tr>
+            <td>Warranty</td>
+            <td>@Model.Warranty months</td>
+        </tr>
+        <tr>
+            <td>Energy Class</td>
+            <td>@Model.EnergyClass</td>
+        </tr>
+        <tr>
+            <td>Washing Capacity</td>
+            <td>@Model.WashingCapacity kg</td>
+        </tr>
+        <tr>
+            <td>Water Consumption</td>
+            <td>@Model.WaterConsumption L</td>
+        </tr>
+        <tr>
+            <td>Energy Consumption</td>
+            <td>@Model.EnergyConsumption kWh</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            @if (Model.IsDisplay == true)
+            {
+                <td><i class="fas fa-check-circle btn-outline-success"></i></td>
+            }
+            else
+            {
+                <td><i class="fas fa-times btn-outline-danger"></i></td>
+            }
+        </tr>
+        <tr>
+            <td>Programmes Number</td>
+            <td>@Model.ProgrammesNumber</td>
+        </tr>
+        <tr>
+            <td>Height</td>
+            <td>@Model.Height sm</td>
+        </tr>
+        <tr>
+            <td>Width</td>
+            <td>@Model.Width sm</td>
+        </tr>
+        <tr>
+            <td>Depth</td>
+            <td>@Model.Depth sm</td>
+        </tr>
+        <tr>
+            <td>Wool Program</td>
+            @if (Model.IsWoolProgram == true)
+            {
+                <td><i class="fas fa-check-circle btn-outline-success"></i></td>
+            }
+            else
+            {
+                <td><i class="fas fa-times btn-outline-danger"></i></td>
+            }
+        </tr>
+        <tr>
+            <td>Quick Wash</td>
+            @if (Model.IsQuickWash == true)
+            {
+                <td><i class="fas fa-check-circle btn-outline-success"></i></td>
+            }
+            else
+            {
+                <td><i class="fas fa-times btn-outline-danger"></i></td>
+            }
+        </tr>
+    </tbody>
+</table>
+
